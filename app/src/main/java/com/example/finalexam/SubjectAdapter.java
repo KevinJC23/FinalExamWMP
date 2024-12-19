@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder> implements ListAdapter {
 
@@ -27,6 +28,13 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         this.subjectList = subjectList;
         this.selectedSubjects = new ArrayList<>();
         this.maxCredits = maxCredits;
+    }
+
+    public SubjectAdapter(ViewEnrollmentActivity context, ArrayList<SubjectModel> selectedSubjects) {
+        this.context = context;
+        this.subjectList = selectedSubjects;
+        this.selectedSubjects = selectedSubjects;
+        this.maxCredits = 0;
     }
 
     @NonNull
@@ -137,5 +145,11 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
             tvCredits = itemView.findViewById(R.id.tvCredits);
             checkBox = itemView.findViewById(R.id.checkBox);
         }
+    }
+
+    public void updateData(List<SubjectModel> subjects) {
+        this.subjectList.clear();
+        this.subjectList.addAll(subjects);
+        notifyDataSetChanged();
     }
 }
