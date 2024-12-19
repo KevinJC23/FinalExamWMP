@@ -1,44 +1,32 @@
 package com.example.finalexam;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class EnrollmentModel {
-    private String enrollmentId;
-    private String studentId;
-    private String subjectId;
+    private List<SubjectModel> subjects;
+    private int totalCredits;
 
-    public EnrollmentModel(String enrollmentId, String studentId, String subjectId) {
-        this.enrollmentId = enrollmentId;
-        this.studentId = studentId;
-        this.subjectId = subjectId;
+    public EnrollmentModel() {
     }
 
-    public EnrollmentModel(ArrayList<SubjectModel> selectedSubjects, int totalCredits) {}
-
-    // Enrollment ID
-    public String getEnrollmentId() {
-        return this.enrollmentId;
+    public EnrollmentModel(List<SubjectModel> subjects, int totalCredits) {
+        this.subjects = subjects;
+        this.totalCredits = totalCredits;
     }
 
-    public void setEnrollmentId(String enrollmentId) {
-        this.enrollmentId = enrollmentId;
+    public List<SubjectModel> getSubjects() {
+        return subjects;
     }
 
-    // Student ID
-    public String getStudentId() {
-        return this.studentId;
+    public void setSubjects(List<SubjectModel> subjects) {
+        this.subjects = subjects;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public int getTotalCredits() {
+        return totalCredits;
     }
 
-    // Subject ID
-    public String getSubjectId() {
-        return this.subjectId;
-    }
-
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
+    public void setTotalCredits(int totalCredits) {
+        this.totalCredits = totalCredits;
     }
 }
