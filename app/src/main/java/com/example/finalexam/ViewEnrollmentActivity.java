@@ -24,11 +24,9 @@ public class ViewEnrollmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_enrollment);
 
-        // Initialize UI elements
         listViewSubjects = findViewById(R.id.listViewSubjects);
         tvTotalCredits = findViewById(R.id.tvTotalCredits);
 
-        // Get the data passed from EnrollmentActivity
         ArrayList<SubjectModel> selectedSubjects = (ArrayList<SubjectModel>) getIntent().getSerializableExtra("selectedSubjects");
         int totalCredits = getIntent().getIntExtra("totalCredits", 0);
 
