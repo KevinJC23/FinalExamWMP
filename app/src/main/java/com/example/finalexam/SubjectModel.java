@@ -1,42 +1,41 @@
 package com.example.finalexam;
 
 public class SubjectModel {
-    private String subjectId;
+    private String id;
     private String subjectName;
-    private Integer credits;
+    private int credits;
 
-    public SubjectModel(String subjectId, String subjectName, Integer credits) {
-        this.subjectId = subjectId;
+    public SubjectModel() {
+
+    }
+
+    public SubjectModel(String id, String subjectName, int credits) {
+        this.id = id;
         this.subjectName = subjectName;
         this.credits = credits;
     }
 
-    public SubjectModel() {}
-
-    // SubjectID
-    public String getSubjectId() {
-        return this.subjectId;
+    public String getId() {
+        return id;
     }
 
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    // Subject Name
     public String getSubjectName() {
-        return this.subjectName;
+        return subjectName;
     }
 
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
     }
 
-    // Credits
-    public Integer getCredits() {
-        return this.credits;
+    public int getCredits() {
+        return credits;
     }
 
-    public void setCredits(Integer credits) {
+    public void setCredits(int credits) {
         this.credits = credits;
     }
 }
