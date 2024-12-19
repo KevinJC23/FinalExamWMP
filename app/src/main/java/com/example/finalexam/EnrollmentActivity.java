@@ -87,7 +87,6 @@ public class EnrollmentActivity extends AppCompatActivity {
         List<SubjectModel> selectedSubjects = subjectAdapter.getSelectedSubjects();
         int totalCredits = subjectAdapter.getTotalCredits();
 
-        // Save selected subjects to Firestore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         EnrollmentModel enrollment = new EnrollmentModel(new ArrayList<>(selectedSubjects), totalCredits);
         db.collection("Enrollments")
@@ -103,6 +102,7 @@ public class EnrollmentActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(EnrollmentActivity.this, "Failed to submit enrollment", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
                 });
     }
 
